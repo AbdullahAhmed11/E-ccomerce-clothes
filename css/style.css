@@ -1,0 +1,635 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+:root {
+  --orange: #ff9500;
+  --white-color: #fff;
+  --black-color: #333;
+  --light-color: rgba(0, 0, 0, 0.3);
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 7.5rem;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: var(--white-color);
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--black-color);
+  border-radius: 5rem;
+}
+
+body {
+  background: #eee;
+  /* height: 1000px; */
+}
+
+body.active {
+  --white-color: #111;
+  --black-color: #fff;
+  --light-color: rgba(255, 255, 255, 0.3);
+  background: #222;
+}
+section {
+  padding: 1rem 9%;
+}
+.heading {
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  border-bottom: 0.1rem solid var(--light-color);
+  font-size: 3rem;
+  color: var(--black-color);
+  text-transform: uppercase;
+}
+
+.heading span {
+  color: var(--orange);
+  text-transform: uppercase;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 5rem;
+  background: var(--black-color);
+  color: var(--white-color);
+  font-size: 1.8rem;
+  padding: 0.9rem 3.5rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--orange);
+  color: #fff;
+}
+
+/* start header  */
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--white-color);
+  border-bottom: 0.1rem solid var(--light-color);
+  padding: 1.5rem 9%;
+}
+header .logo {
+  text-transform: uppercase;
+  color: var(--black-color);
+  font-weight: bolder;
+  font-size: 3rem;
+}
+header .logo span {
+  color: var(--orange);
+}
+header form {
+  display: flex;
+  align-items: center;
+  background: var(--black-color);
+  width: 40rem;
+  height: 5rem;
+  overflow: hidden;
+  border-radius: 5rem;
+  -webkit-border-radius: 5rem;
+  -moz-border-radius: 5rem;
+  -ms-border-radius: 5rem;
+  -o-border-radius: 5rem;
+}
+header form input {
+  width: 100%;
+  height: 100%;
+  background: none;
+  font-size: 1.7rem;
+  text-transform: none;
+  color: var(--white-color);
+  padding: 0 2rem;
+}
+header form label {
+  font-size: 2rem;
+  padding-right: 2rem;
+  color: var(--white-color);
+  cursor: pointer;
+}
+header form label:hover {
+  color: var(--orange);
+}
+header .icons div,
+header .icons a {
+  width: 4rem;
+  height: 4rem;
+  font-size: 1.7rem;
+  line-height: 4rem;
+  background: var(--black-color);
+  color: var(--white-color);
+  text-align: center;
+  cursor: pointer;
+  margin-right: 0.6rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transition: 0.6s;
+  -webkit-transition: 0.6s;
+  -moz-transition: 0.6s;
+  -ms-transition: 0.6s;
+  -o-transition: 0.6s;
+}
+header .icons div:hover,
+header .icons a:hover {
+  background: var(--orange);
+  color: #fff;
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+}
+header.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+/* navbar  */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: -120%;
+  z-index: 1000;
+  height: 100%;
+  background: var(--white-color);
+  width: 30rem;
+  padding: 3rem;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+}
+.navbar.active {
+  left: 0;
+  box-shadow: 0 0 0 100vw var(--light-color);
+}
+.navbar .user {
+  text-align: center;
+  margin: 3rem auto;
+}
+.navbar .user img {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  border: 0.5rem solid var(--white-color);
+  object-fit: cover;
+  box-shadow: 5rem 2rem 0 -3rem var(--orange), -5rem -2rem 0 -3rem var(--orange);
+}
+.navbar .user h3 {
+  font-weight: bolder;
+  padding-top: 0.5rem;
+  font-size: 2rem;
+  color: var(--black-color);
+}
+.navbar .links a {
+  display: block;
+  color: var(--black-color);
+  font-size: 2rem;
+  padding: 1.5rem 0;
+  border-bottom: 0.1rem solid var(--black-color);
+}
+.navbar .links a:last-child {
+  border: none;
+}
+.navbar .links a:hover {
+  letter-spacing: 0.2rem;
+  color: var(--orange);
+}
+.navbar #close {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  font-weight: bold;
+  color: var(--black-color);
+  cursor: pointer;
+  font-size: 3rem;
+}
+.navbar #close:hover {
+  color: var(--orange);
+}
+
+/* home  */
+.home {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  gap: 1.5rem;
+}
+
+.home .content {
+  flex: 1 1 40rem;
+}
+
+.home .image {
+  flex: 1 1 40rem;
+  text-align: center;
+}
+
+.home .image img {
+  width: 30vw;
+}
+
+.home .content span {
+  color: var(--orange);
+  font-size: 3rem;
+}
+
+.home .content h3 {
+  color: var(--black-color);
+  font-size: 8rem;
+  text-transform: uppercase;
+}
+
+/* category  */
+.category .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.category .box-container .box {
+  flex: 1 1 40rem;
+  height: 30rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+.category .box-container .box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.category .box-container .box:hover img {
+  transform: scale(1.1);
+}
+.category .box-container .content {
+  position: absolute;
+  bottom: 7rem;
+  left: 2rem;
+}
+.category .box-container .content span {
+  color: var(--orange);
+  font-size: 2rem;
+}
+.category .box-container .content h3 {
+  color: #3337;
+  font-size: 3rem;
+  text-transform: uppercase;
+  padding-top: 0.5rem;
+}
+
+/* products  */
+.products .product-slider .slide {
+  overflow: hidden;
+  position: relative;
+  border: 0.1rem solid var(--light-color);
+  background: var(--white-color);
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+.products .product-slider .slide .image {
+  padding: 1rem;
+}
+.products .product-slider .slide .image img {
+  width: 100%;
+  height: 50rem;
+  object-fit: cover;
+}
+.products .product-slider .slide .icons {
+  position: absolute;
+  top: 0;
+  right: -7rem;
+}
+.products .product-slider .slide .content .stars i {
+  font-size: 2rem;
+  color: var(--orange);
+}
+
+.products .product-slider .slide:hover .icons {
+  right: 1rem;
+}
+
+.products .product-slider .slide .icons a {
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  text-align: center;
+  font-size: 2rem;
+  border-radius: 50%;
+  background: var(--black-color);
+  color: var(--white-color);
+  display: block;
+  margin-top: 1rem;
+}
+
+.products .product-slider .slide .icons a:hover {
+  background: var(--orange);
+  color: #fff;
+}
+.products .product-slider .slide .content {
+  padding: 2rem;
+  border-top: 0.1rem solid var(--light-color);
+}
+.products .product-slider .slide .content h3 {
+  color: var(--black-color);
+  font-weight: normal;
+  font-size: 2.5rem;
+  padding: 0.5rem 0;
+}
+
+.products .product-slider .slide .content .price {
+  color: var(--orange);
+  font-weight: bolder;
+  font-size: 2.5rem;
+  padding: 0.5rem 0;
+}
+
+.products .product-slider .slide .content .price span {
+  color: var(--black-color);
+  font-weight: normal;
+  font-size: 1.5rem;
+  text-decoration: line-through;
+}
+
+.products .product-slider .swiper-button-next,
+.products .product-slider .swiper-button-prev {
+  color: var(--black-color);
+}
+
+.products .gap {
+  margin-bottom: 2rem;
+}
+
+/* featured  */
+.featured .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.featured .box-container .box {
+  flex: 1 1 27rem;
+  background: var(--white-color);
+  border: 0.1rem solid var(--light-color);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+.featured .box-container .box .image-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+.featured .box-container .box .image-container .small-image {
+  width: 20%;
+}
+.featured .box-container .box .image-container .small-image img {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  border: 0.1rem solid var(--light-color);
+}
+.featured .box-container .box .image-container .big-image {
+  width: 80%;
+}
+.featured .box-container .box .image-container .big-image img {
+  width: 100%;
+}
+.featured .box-container .box .content {
+  padding: 1rem;
+  border-top: 0.1rem solid var(--light-color);
+}
+
+.featured .box-container .box .content h3 {
+  font-size: 2.5rem;
+  color: var(--black-color);
+}
+
+.featured .box-container .box .content .stars {
+  padding: 0.5rem 0;
+}
+
+.featured .box-container .box .content .stars i {
+  font-size: 1.5rem;
+  color: var(--orange);
+}
+
+.featured .box-container .box .content .stars span {
+  font-size: 1.5rem;
+  color: var(--black-color);
+  font-weight: 300;
+}
+
+.featured .box-container .box .content p {
+  color: var(--black-color);
+  font-size: 1.5rem;
+  padding: 0.5rem 0;
+}
+
+.featured .box-container .box .content .price {
+  color: var(--orange);
+  font-size: 2.5rem;
+  padding: 0.5rem 0;
+  font-weight: bolder;
+}
+
+.featured .box-container .box .content .price span {
+  color: var(--black-color);
+  font-size: 1.5rem;
+  text-decoration: line-through;
+  font-weight: 300;
+}
+/* start deal  */
+
+.deal .row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  text-align: center;
+  border: 0.1rem solid var(--light-color);
+  background: var(--white-color);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.deal .row .content {
+  flex: 1 1 40rem;
+  padding: 1rem;
+}
+
+.deal .row .image {
+  flex: 1 1 40rem;
+  padding: 2rem;
+}
+
+.deal .row .image img {
+  width: 100%;
+}
+
+.deal .row .discount {
+  font-size: 2rem;
+  color: var(--orange);
+}
+
+.deal .row .text {
+  font-size: 4rem;
+  color: var(--black-color);
+  padding: 0.5rem 0;
+}
+
+.deal .row .count-down {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  padding: 0.5rem 0;
+}
+
+.deal .row .count-down h3 {
+  color: var(--orange);
+  font-size: 4rem;
+}
+
+.deal .row .count-down span {
+  color: var(--light-color);
+  font-size: 1.5rem;
+}
+
+/* review  */
+.review .review-slider .slide {
+  background: var(--white-color);
+  border-radius: 0.5rem;
+  border: 0.1rem solid var(--light-color);
+  padding: 2rem;
+}
+.review .review-slider .slide .stars {
+  padding: 1rem 0;
+}
+
+.review .review-slider .slide .stars i {
+  font-size: 2rem;
+  color: var(--orange);
+}
+.review .review-slider .slide p {
+  color: var(--black-color);
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1.5;
+  padding: 1rem 0;
+}
+
+.review .review-slider .slide .user {
+  padding-top: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.review .review-slider .slide .user img {
+  margin-right: 1.5rem;
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.review .review-slider .slide .user h3 {
+  color: var(--black-color);
+  font-size: 2.5rem;
+}
+
+.review .review-slider .slide .user span {
+  color: var(--light-color);
+  font-size: 1.7rem;
+}
+
+/* footer  */
+.footer .footer-container {
+  background: var(--white-color);
+  border: 0.1rem solid var(--light-color);
+  border-radius: 0.5rem;
+  padding: 2rem;
+}
+
+.footer .footer-container .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer .footer-container .box-container .box {
+  flex: 1 1 25rem;
+}
+
+.footer .footer-container .box-container .box h3 {
+  color: var(--orange);
+  font-size: 2.5rem;
+  padding: 1rem 0;
+}
+
+.footer .footer-container .box-container .box a {
+  display: block;
+  color: var(--black-color);
+  font-size: 1.7rem;
+  padding: 1rem 0;
+  font-weight: 300;
+}
+
+.footer .footer-container .box-container .box a:hover {
+  color: var(--orange);
+}
+
+.footer .footer-container .box-container .box img {
+  margin-top: 1rem;
+}
+
+.footer .footer-container .credit {
+  font-size: 2rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 0.1rem solid var(--light-color);
+  color: var(--black-color);
+  text-align: center;
+}
+
+.footer .footer-container .credit span {
+  color: var(--orange);
+}

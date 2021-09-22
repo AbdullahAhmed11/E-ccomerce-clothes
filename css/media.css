@@ -1,0 +1,48 @@
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+
+  header {
+    padding: 1.5rem;
+  }
+
+  section {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+  header form {
+    width: 100%;
+    margin: 2rem 0;
+  }
+  header.active {
+    transform: translateY(-12.5rem);
+  }
+  .navbar .links a {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+  }
+  .home .content {
+    text-align: center;
+  }
+
+  .home .image img {
+    width: 100%;
+  }
+}
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+
+  .heading {
+    text-align: center;
+    font-size: 2.5rem;
+    border-bottom: none;
+  }
+}
